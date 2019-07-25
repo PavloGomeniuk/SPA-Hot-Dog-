@@ -11,5 +11,5 @@ To install:
 
 Description:
 Menu page: Get Request (XHR)
-Review: Write and read fromfirebase
+Review: Write and read from firebase
 Contact: Read (used fetch)
