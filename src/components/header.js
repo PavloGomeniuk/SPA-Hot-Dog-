@@ -6,6 +6,10 @@ import AppIndex from './AppIndex.jsx';
 import Contactpage from './Contactpage.js';
 import AppReview from './AppReview.js';
 import {Route} from 'react-router-dom';
+import LoginContainer from '../containers/LoginContainer.js';
+import ProfileContainer from '../containers/ProfileContainer';
+import PrivateRoute from '../containers/PrivateRoute';
+import NotFound from './NotFound';
 
 export default class Header extends Component {
           render() {
@@ -24,7 +28,10 @@ export default class Header extends Component {
            <Link to="/Review">Review</Link>
         </li>
         <li>
-          <a href="#footer">About Us</a>
+          <Link to="/Login">Login</Link>
+        </li>
+        <li>
+          <Link to="/Profile">Profile</Link>
         </li>
         <li>
           <Link to="/Contactpage">Contact</Link>
@@ -35,8 +42,11 @@ export default class Header extends Component {
   <main className="main">
       <Switch>
       <Route exact path="/" component={AppIndex} />
+      <Route exact path="/Login" component={LoginContainer} />
       <Route path="/Contactpage" component={Contactpage} />
-       <Route path="/Review" component={AppReview} />
+      <Route path="/Review" component={AppReview} />
+      <PrivateRoute path="/profile" component={ProfileContainer} />
+      <Route component={NotFound} />
     </Switch>
   </main>
   <footer className="footer" id="footer">
